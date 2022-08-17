@@ -159,3 +159,15 @@ $ df -h
 
 $ lsblk
 rbd0   252:0    0   100G  0 disk /mnt/ceph
+```
+some usefull links for you:
+```
+https://docs.ceph.com/en/latest/cephadm/host-management/#cephadm-adding-hosts
+https://docs.ceph.com/en/latest/rados/configuration/network-config-ref/#cluster-network
+https://docs.ceph.com/en/latest/cephadm/services/mon/#deploy-additional-monitors
+https://docs.ceph.com/en/latest/cephadm/services/osd/#cephadm-deploy-osds
+https://docs.ceph.com/en/quincy/rados/operations/pools/#create-a-pool
+https://docs.ceph.com/en/quincy/rbd/rados-rbd-cmds/
+https://docs.ceph.com/en/quincy/rados/operations/user-management/#add-a-user
+https://docs.ceph.com/en/quincy/start/quick-rbd/
+```
