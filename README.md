@@ -1,7 +1,7 @@
 # ceph-cluster-deployment
 first of all redhat's recommendation is at least 3 servers for your cluster, we're using 3 here too, but you can use 1 or 2 servers depending on your expectation from your cluster, for example if you use 1 server and that server goes down for any reason, you'll go down in history as the guy who used 1 server for storage backend and now that the server is down, the whole company is in crisis mode, so don't be that guy :D <br>
 <br>
-i'm using ubuntu for our servers and centos7 as our client which we later use.(we're gonna deploy and use ceph rbd block device too), but same steps could be followed for other distros to, not nuch is gonna change.<br>
+i'm using ubuntu for our servers and centos7 as our client which we later use.(we're gonna deploy and use ceph rbd block device too), but same steps could be followed for other distros to, not much is gonna change.<br>
 first, we need some prerequisites on our servers: <br>
 1. Python 3
 ```
@@ -10,7 +10,7 @@ apt install -y python3
 ```
 2. Systemd
 ```
-# you allready have this
+# you already have this
 ```
 3. Docker for running containers
 ```
@@ -29,7 +29,7 @@ apt install ntp -y
 ```
 5. LVM2 for provisioning storage devices
 ```
-# ubuntu20 - 22 allready have this
+# ubuntu20 - 22 already have this
 ```
 now we will install cephadm
 ```
@@ -61,7 +61,7 @@ to ENABLE CEPH CLI run
 cephadm shell
 ```
 which will drop you into a container that you can use to manage your cluster<br>
-to make sure everythin is working fine run << ceph -s >> which will show you some info, we don't care about the output now.<br>
+to make sure everything is working fine run << ceph -s >> which will show you some info, we don't care about the output now.<br>
 we use all 3 server as mons and hosts, so first thing you need to do is follow these steps:
 ```
 ssh-keygen
