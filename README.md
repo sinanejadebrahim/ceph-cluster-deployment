@@ -43,17 +43,16 @@ which cephadm
 /usr/sbin/cephadm
 ```
 now it's time to bootstrap our cluster, but there is something you need to know.<br>
-ceph needs alot of bandwith because it's constantly syncing in the background and clients are accessing their data at the same time, for this reason te recommendation is a 10G network for your frontend which will be used by MONs - MDSs and clients acessing OSDs and a 40G netowrk for your clusters backend which OSDs will use for heartbeat, object replication and recovery traffic. This may improve performance compared to using a single network.but you can skip this step if you don't need it.<br>
+ceph needs alot of bandwith because it's constantly syncing in the background and clients are accessing their data at the same time, for this reason recommendation is a 10G network for your frontend which will be used by MONs - MDSs and clients acessing OSDs and a 40G netowrk for your cluster's backend which OSDs will use for heartbeat, object replication and recovery traffic. This may improve performance compared to using a single network.but you can skip this step if you don't need it.<br>
 to bootstrap your cluster run these command: 
 ```
 # 192.168.1.10 => our first nodes IP address
 # 10.10.10.10 => our first nodes second IP which will be used as backend network
 cephadm bootstrap --mon-ip 192.168.1.10 --cluster-network 10.10.10.10
 # if you don't want a cluster network just run the command without that 
-# if you used cluster network make sure all servers are accesible by both IPs (ping them from eachother)
-# to this only if you used cluster network
-add << cluster_network = {cluster-network/netmask} >> to /etc/ceph/ceph.conf
-# cluster_network = {10.10.10.0/24}
+# if you used cluster network make sure all servers are accesible by both IPs (ping them from each other)
+# do this only if you used cluster network
+# add << cluster_network = {cluster-network/netmask} >> to /etc/ceph/ceph.conf
 ```
 wait for it to finish, at the end you'll get a address and a username and a password to access ceph dashboard, save that for later.<br>
 to ENABLE CEPH CLI run 
